@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="quiz.css" />
   </head>
   <body>
-    <div>
+    <!-- <div>
       <h3>How many Wonders of the World exist?</h3>
+
       <a class="anchor" href="#">1) 4</a>
       <a class="anchor" href="#">2) 5</a>
       <a class="anchor" href="#">3) 6</a>
@@ -23,8 +24,20 @@
       <a class="anchor" href="#">2) Annapurna</a>
       <a class="anchor" href="#">3) K2</a>
       <a class="anchor correct" href="#">4) Mount Everest</a>
-    </div>
-    <p>Your score is <span class="score">0</span></p>
+    </div> -->
+    <form action="">
+      <h3>How many Wonders of the World exist?</h3>
+
+      <input type="radio" id="first" />
+      <label for="first">4</label><br />
+      <input type="radio" id="second" />
+      <label for="second">5</label><br />
+      <input type="radio" id="third" />
+      <label for="third">6</label><br />
+      <input type="radio" id="fourth" />
+      <label for="fourth" class="correct">7</label>
+      <p>Your score is <span class="score">0</span></p>
+    </form>
     <script src="quiz.js"></script>
   </body>
 </html>

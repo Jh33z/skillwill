@@ -15,3 +15,16 @@ for (let answer of answers) {
     console.log(counter);
   });
 }
+
+const labels = document.querySelectorAll("label");
+for (let answer of labels) {
+  answer.addEventListener("click", () => {
+    if (answer.classList.contains("correct")) {
+      answer.style.backgroundColor = "green";
+      counter++;
+      score.textContent = counter;
+    } else {
+      answer.style.backgroundColor = "red";
+    }
+  });
+}
