@@ -1,37 +1,15 @@
-// Function to calculate the average of numbers
-function calculateAverage(numbers) {
-  let sum = 0;
-  let count = 0;
+let rawInput = document.querySelector("#numbersInput");
+let btn = document.querySelector("#calculateButton");
+let p = document.querySelector("#result");
 
-  for (let number of numbers) {
-    if (!isNaN(number)) {
-      sum += parseFloat(number);
-      count++;
-    }
-  }
+btn.addEventListener("click", () => {
+  let inputVal = rawInput.value.split(":");
 
-  if (count > 0) {
-    return sum / count;
-  } else {
-    return NaN;
-  }
-}
+  let sum = inputVal.reduce((acc, curr) => {
+    return acc + Number(curr);
+  }, 0);
+  let average = sum / inputVal.length;
 
-// Event listener for the button click
-document
-  .getElementById("calculateButton")
-  .addEventListener("click", function () {
-    const numbersInput = document.getElementById("numbersInput").value;
-    const numbersArray = numbersInput.split(":");
-
-    const average = calculateAverage(numbersArray);
-
-    if (!isNaN(average)) {
-      document.getElementById(
-        "result"
-      ).textContent = `Average: ${average.toFixed(2)}`;
-    } else {
-      document.getElementById("result").textContent =
-        "Invalid input! Please enter valid numbers separated by colons.";
-    }
-  });
+  // Set the result text inside the event listener
+  p.textContent = "Sum: " + sum + ", Average: " + average.toFixed(2); // Assuming you want the average rounded to 2 decimal places
+});

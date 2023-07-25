@@ -1,29 +1,14 @@
-// Function to change the body background color
-function changeBodyColor(color) {
-  document.body.style.backgroundColor = color;
-}
+let colors = ["red", "blue", "green", "black", "white"];
 
-// Function to validate the input color
-function validateColor(inputColor) {
-  const allowedColors = ["red", "blue", "green", "black", "white"];
-
-  if (allowedColors.includes(inputColor.toLowerCase())) {
-    return true;
+const rawInput = document.querySelector("#colorInput");
+const btn = document.querySelector("#changeColorButton");
+btn.addEventListener("click", () => {
+  let input = rawInput.value.trim().toLowerCase();
+  if (input !== "" && colors.includes(input)) {
+    document.body.style.backgroundColor = input;
+    console.log(colors.includes(input));
   } else {
-    alert(
-      "Invalid color! Please enter one of the following colors: red, blue, green, black, white."
-    );
-    return false;
+    alert("please enter a valid color");
   }
-}
-
-// Event listener for the button click
-document
-  .getElementById("changeColorButton")
-  .addEventListener("click", function () {
-    const colorInput = document.getElementById("colorInput").value;
-
-    if (validateColor(colorInput)) {
-      changeBodyColor(colorInput.toLowerCase());
-    }
-  });
+  //document.body.style.backgroundColor = "red";
+});
