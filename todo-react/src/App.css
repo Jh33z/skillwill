@@ -1,0 +1,41 @@
+/* App.css */
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.columns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.column {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+}
+
+.task {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  padding: 5px;
+}
