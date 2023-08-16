@@ -31,17 +31,22 @@ const data = [
     description: "This book is called Metro",
   },
 ];
+
 const BookList = () => {
+  function action(name) {
+    alert(`this alert comes from ${name}`);
+  }
   return (
     <div>
-      {data.map((book) => {
+      {data.map((book) => (
         <Book
           key={book.id}
           name={book.name}
           image={book.image}
           description={book.description}
-        />;
-      })}
+          action={() => action(book.name)}
+        />
+      ))}
     </div>
   );
 };

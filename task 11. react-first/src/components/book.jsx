@@ -1,6 +1,6 @@
 import React from "react";
 
-const Book = ({ name, image, description }) => {
+const Book = ({ name, image, description, action }) => {
   return (
     <div>
       <h1>{name}</h1>
@@ -8,7 +8,7 @@ const Book = ({ name, image, description }) => {
         <img src={image} alt="" />
       </div>
       <p>{description}</p>
-      <button>click</button>
+      <button onClick={action}>click</button>
     </div>
   );
 };
